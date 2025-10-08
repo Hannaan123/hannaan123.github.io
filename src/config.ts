@@ -1,6 +1,6 @@
-export const SITE_TITLE = "Tarna";
+export const SITE_TITLE = "Hannaan";
 export const SITE_DESCRIPTION = "Hello 👋";
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
 
-export const BIRTHDAY = '10/26/03';
+export const BIRTHDAY = '09/06/08';

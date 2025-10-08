@@ -2,98 +2,93 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-import { BIRTHDAY } from 'src/config';
+import createSlug from "../lib/createSlug";
 
-interface AgeResponse {
-    age: number;
-    nextBirthday: string;
-}
+const ageResponse = { age: 0 }; // replace with your age if desired
 
-const ageResponse = await fetch(
-	`https://age.kindled.workers.dev/${BIRTHDAY}`
-).then(async (response) => {
-	return (await response.json()) as AgeResponse;
-});
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate!!.valueOf() - a.data.pubDate!!.valueOf());
+// Fetch blog posts
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate!!.valueOf() - a.data.pubDate!!.valueOf()
+);
 const last_posts = posts.slice(0, 3);
 
+// Fetch featured projects
 const projects = (await getCollection("project"))
-    .filter(project => project.data.featured)
-    .sort((a, b) => b.data.index.valueOf() - a.data.index.valueOf());
+  .filter(project => project.data.featured)
+  .sort((a, b) => b.data.index.valueOf() - a.data.index.valueOf());
 const last_projects = projects.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
+  <!-- Header Section -->
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Tarna</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Freelancer</div>
-    <div class="py-2">
-        <text class="text-lg">
-            Hello, I'm Tarna! I'm a {ageResponse.age} year old, self taught developer, freelancer, and a student.
-        </text>
-      </div>
+    <div class="text-xl py-1 text-primary">Hey there 👋</div>
+    <div class="text-5xl font-bold text-white">I'm Hannaan</div>
+    <div class="text-3xl py-3 font-bold text-white">Server Owner and Freelancer</div>
+    <div class="py-2 text-lg text-gray-200">
+      Hi, I'm Hannaan — I build Minecraft servers, optimize backend systems, and love hosting servers that run like lightning.
+    </div>
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My Projects {"</>"}</div>
+  <!-- Projects Section -->
+  <div class="mt-10">
+    <div class="text-3xl font-bold text-primary">My Projects &lt;/&gt;</div>
+    <hr class="border-accent my-2"/>
   </div>
 
-  {
-    last_projects.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no projects to show at the moment. Check back later!</p>
-      </div>
-    ) : (
-      <ul>
-        {last_projects.map((project) => (
-          <>
-            <HorizontalCard
-              title={project.data.title}
-              img={project.data.heroImage}
-              desc={project.data.description}
-              url={"/projects/" + createSlug(project.data.title, project.slug)}
-              target="_self"
-              badge={project.data.badge}
-              tags={project.data.tags}
-            />
-            <div class="divider my-0" />
-          </>
-        ))}
-      </ul>
-    )
-  }
+  {last_projects.length === 0 ? (
+    <div class="bg-base-200 border-l-4 border-secondary w-full p-4">
+      <p class="font-bold">Sorry!</p>
+      <p>There are no projects to show at the moment. Check back later!</p>
+    </div>
+  ) : (
+    <ul class="space-y-4">
+      {last_projects.map((project) => (
+        <li>
+          <HorizontalCard
+            title={project.data.title}
+            img={project.data.heroImage}
+            desc={project.data.description}
+            url={"/projects/" + createSlug(project.data.title, project.slug)}
+            target="_self"
+            badge={project.data.badge}
+            tags={project.data.tags}
+            class="hover:scale-[1.02] transition-transform duration-200"
+            titleClass="hover:text-primary transition-colors duration-200"
+          />
+        </li>
+      ))}
+    </ul>
+  )}
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest Blogs</div>
+  <!-- Latest Blogs Section -->
+  <div class="mt-10">
+    <div class="text-3xl font-bold text-primary">Latest Blogs</div>
+    <hr class="border-accent my-2"/>
   </div>
 
-  {
-    last_posts.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
-      </div>
-    ) : (
-      <ul>
-        {last_posts.map((post) => (
-          <>
-            <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.slug)}
-              target="_self"
-              badge={post.data.badge}
-              tags={post.data.tags}
-            />
-            <div class="divider my-0" />
-          </>
-        ))}
-      </ul>
-    )
-  }
+  {last_posts.length === 0 ? (
+    <div class="bg-base-200 border-l-4 border-secondary w-full p-4">
+      <p class="font-bold">Sorry!</p>
+      <p>There are no blog posts to show at the moment. Check back later!</p>
+    </div>
+  ) : (
+    <ul class="space-y-4">
+      {last_posts.map((post) => (
+        <li>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            target="_self"
+            badge={post.data.badge}
+            tags={post.data.tags}
+            class="hover:scale-[1.02] transition-transform duration-200"
+            titleClass="hover:text-primary transition-colors duration-200"
+          />
+        </li>
+      ))}
+    </ul>
+  )}
 </BaseLayout>

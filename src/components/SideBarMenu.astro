@@ -1,26 +1,30 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const items = [
+  { id: "home", label: "Home", href: "/" },
+  { id: "projects", label: "Projects", href: "/projects" },
+  { id: "blog", label: "Blog", href: "/blog/" },
+  { id: "cv", label: "CV", href: "/cv" },
+  { id: "contact", label: "Contact", href: "mailto:contact@tarna.dev", external: true },
+];
 ---
 
-<ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-    <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
-    <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
-    <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
-    <li>
-        <a
-            class="py-3 text-base"
-            href="mailto:contact@tarna.dev"
-            target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Contact</a
-        >
+<ul class="menu grow shrink menu-md overflow-y-auto flex flex-col space-y-1 mt-2">
+  {items.map((item) => (
+    <li class="relative group">
+      <a
+        id={item.id}
+        href={item.href}
+        target={item.external ? "_blank" : "_self"}
+        rel={item.external ? "noreferrer" : undefined}
+        class={`flex items-center py-3 px-3 rounded-lg transition-all duration-300 ${
+          sideBarActiveItemID === item.id
+            ? "bg-lime-500/20 text-lime-400 font-semibold border-l-4 border-lime-400"
+            : "text-gray-300 hover:text-lime-300 hover:bg-neutral/60"
+        }`}
+      >
+        {item.label}
+      </a>
     </li>
+  ))}
 </ul>
-
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
-const activeItemElem = document.getElementById(sideBarActiveItemID);
-activeItemElem && activeItemElem.classList.add(activeClass);
-</script>

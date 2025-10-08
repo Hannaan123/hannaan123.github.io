@@ -6,26 +6,10 @@ import createSlug from "../../lib/createSlug"
 
 // The order of the categories in how they should be displayed
 export const categories = [
-    {
-        index: 1,
-        name: 'Showcase',
-    },
-    {
-        index: 2,
-        name: 'Discord Bots',
-    },
-    {
-        index: 3,
-        name: 'Plugins',
-    },
-    {
-        index: 4,
-        name: 'Libraries',
-    },
-    {
-        index: 5,
-        name: 'Other',
-    }
+    { index: 1, name: 'Showcase' },
+    { index: 2, name: 'Plugins' },
+    { index: 3, name: 'Libraries' },
+    { index: 4, name: 'Other' }
 ]
 
 export async function getStaticPaths({ paginate }) {
@@ -33,9 +17,9 @@ export async function getStaticPaths({ paginate }) {
     posts.sort((a, b) => b.data.index.valueOf() - a.data.index.valueOf());
     return paginate(posts, { pageSize: 10 });
 }
-  
+
 const { page } = Astro.props as { page: { data: any[]; url: { prev: string; next: string } } };
-  
+
 const sortedCategories = categories.sort((a, b) => a.index - b.index);
 const sortedPosts = page.data.sort((a, b) => a.data.index - b.data.index);
 const sortedGroupedPosts = sortedCategories.reduce((acc, category) => {
@@ -45,38 +29,33 @@ const sortedGroupedPosts = sortedCategories.reduce((acc, category) => {
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
-    <div class="mb-5">
-      <div class="text-3xl w-full font-bold">Project</div>
-    </div>
-  
-    {
-      page.data.length === 0 ? (
+
+    {page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-          <p class="font-bold">Sorry!</p>
-          <p>There are no project posts to show at the moment. Check back later!</p>
+            <p class="font-bold">Sorry!</p>
+            <p>There are no project posts to show at the moment. Check back later!</p>
         </div>
-      ) : (
+    ) : (
         Object.keys(sortedGroupedPosts).map((category) => (
-          <div>
-            <h2 class="text-2xl font-bold mt-8 mb-4">{category}</h2>
-            <ul>
-              {sortedGroupedPosts[category].map((post) => (
-                <>
-                  <HorizontalCard
-                    title={post.data.title}
-                    img={post.data.heroImage}
-                    desc={post.data.description}
-                    url={"/projects/" + createSlug(post.data.title, post.slug)}
-                    target="_self"
-                    badge={post.data.badge}
-                    tags={post.data.tags}
-                  />
-                  <div class="divider my-0" />
-                </>
-              ))}
-            </ul>
-          </div>
+            <div class="mb-8"> <!-- Slightly less bottom margin -->
+                <h2 class="text-2xl font-bold mt-4 mb-4 text-primary">{category}</h2> <!-- Reduced top margin -->
+                <ul class="space-y-4">
+                    {sortedGroupedPosts[category].map((post) => (
+                        <>
+                            <HorizontalCard
+                                title={post.data.title}
+                                img={post.data.heroImage}
+                                desc={post.data.description}
+                                url={"/projects/" + createSlug(post.data.title, post.slug)}
+                                target="_self"
+                                badge={post.data.badge}
+                                tags={post.data.tags}
+                            />
+                            <div class="divider border-lime-500 my-0" />
+                        </>
+                    ))}
+                </ul>
+            </div>
         ))
-      )
-    }
+    )}
 </BaseLayout>

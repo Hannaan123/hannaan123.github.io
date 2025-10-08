@@ -1,135 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
-import { BIRTHDAY } from 'src/config';
 
-interface AgeResponse {
-    age: number;
-    nextBirthday: string;
-}
-
-const ageResponse = await fetch(
-	`https://age.kindled.workers.dev/${BIRTHDAY}`
-).then(async (response) => {
-	return (await response.json()) as AgeResponse;
-});
+const ageResponse = { age: 0 };
 
 const languages = [
-    {
-        name: 'JavaScript',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
-    },
-    {
-        name: 'TypeScript',
-        link: 'https://www.typescriptlang.org'
-    },
-    {
-        name: 'Java',
-        link: 'https://www.java.com/en'
-    },
-    {
-        name: 'Kotlin',
-        link: 'https://kotlinlang.org'
-    },
-    {
-        name: 'Python',
-        link: 'https://www.python.org'
-    },
-    {
-        name: 'C',
-        link: 'https://en.wikipedia.org/wiki/C_(programming_language)'
-    },
-    {
-        name: 'HTML',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'
-    },
-    {
-        name: 'CSS',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
-    }
-]
+    { name: 'JavaScript', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+    { name: 'TypeScript', link: 'https://www.typescriptlang.org' },
+    { name: 'Java', link: 'https://www.java.com/en' },
+    { name: 'Kotlin', link: 'https://kotlinlang.org' },
+    { name: 'Python', link: 'https://www.python.org' },
+    { name: 'C', link: 'https://en.wikipedia.org/wiki/C_(programming_language)' },
+    { name: 'HTML', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: 'CSS', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' }
+];
 
 const skills = [
-    {
-        name: 'Spigot',
-        link: 'https://www.spigotmc.org'
-    },
-    {
-        name: 'PaperMC',
-        link: 'https://papermc.io'
-    },
-    {
-        name: 'Plugin Development',
-    },
-    {
-        name: 'Discord Bot Development',
-    },
-    {
-        name: 'Management',
-    },
-    {
-        name: 'System Administration',
-    },
-    {
-        name: 'Moderation',
-    },
-    {
-        name: '130WPM Typing Speed',
-    }
-]
+    { name: 'Skript Development' },
+    { name: 'Java Development' },
+    { name: 'Kotlin Development' },
+    { name: 'Bot Development' },
+    { name: 'Server Management' },
+    { name: 'System Administration' }
+];
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <!-- Profile Section -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <div class="text-3xl w-full font-bold text-primary">Profile</div>
+    <hr class="border-accent my-2"/>
   </div>
 
-  <div class="mb-10 text-justify">
-    Hello, I'm Tarna!
-    I'm a {ageResponse.age} year old, self taught developer, freelancer, and a student.
+  <div class="mb-10 text-justify text-gray-200">
+    Hello, I'm <strong class="text-white">Hannaan</strong>!  
+    I am a Skript developer learning Java and Kotlin.  
+    I have experience owning and managing Minecraft servers, hosting Discord bots, and developing plugins and community features.
   </div>
 
+  <!-- Experience Section -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold text-primary">Experience</div>
+    <hr class="border-accent my-2"/>
   </div>
 
   <div class="time-line-container mb-10">
-    <TimeLineElement
-        title="Moderator at Minehut"
-        subtitle="November 2020 to Present"
+    <TimeLineElement 
+      title="Owner & Developer at SoulzSteal" 
+      subtitle="2022 – 2023"
     >
-        Minehut is a popular freemium Minecraft server host that provides services to tens of thousands of daily players. I was a moderator on both the Minehut Discord and their Minecraft server. The Discord currently has over 118,000 members and the Minecraft server currently averages around 6k-7k players with an all time peak of over 31k players. As a moderator, my responsibility is to help users and punish anyone who breaks any of the rules.
+      SoulzSteal was a Minecraft server averaging <strong class="text-white">40 players</strong>. As the owner, I handled server management, plugin development, and community moderation. I designed custom gameplay features, maintained server stability, and ensured players had a fun and safe environment to play in.
     </TimeLineElement>
 
-    <TimeLineElement
-        title="Developer at LeoneMC"
-        subtitle="December 2023 to August 2024"
+    <TimeLineElement 
+      title="Owner & Developer at SoulNetwork" 
+      subtitle="Jan 2025 – Sep 2025"
     >
-        Leone is a large Minecraft server averaging 300-400 players with a peak of 800 players with a variety of gamemodes such as box, lifesteal, smp, and much more. I was the main developer for their mode named “GunCube” as well as a secondary developer on a few of their other modes.
-    </TimeLineElement>
-
-    <TimeLineElement
-        title="Bot Developer at Vouchley"
-        subtitle="September 2023 to Present"
-    >
-        <a href="https://vouchley.com">Vouchley</a> reviewing platform for freelancers. I am the developer of their official Discord bot that posts reviews to a Discord channel whenever one is received, user info commands, and much more! It is currently in 44 guilds with over 36,000 users.
-    </TimeLineElement>
-
-    <TimeLineElement
-        title="Support at GravelHost"
-        subtitle="March 2024 to Present"
-    >
-        <a href="https://gravelhost.com">GravelHost</a> is a premium server host offering services for Minecraft, Rust, FiveM, ARK, and more. I am a support agent and my responsibilities include answering tickets and helping customers with any issues they may have.
+      SoulNetwork is a Minecraft server averaging <strong class="text-white">50 players</strong> with a <strong class="text-white">peak of 70</strong>. I founded and managed the server, developing custom plugins, hosting Discord bots for the community, and handling all technical operations. I also manage community interactions, events, and moderation to provide a consistent and enjoyable experience for players.
     </TimeLineElement>
   </div>
 
+  <!-- Current Work Section -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Languages</div>
+    <div class="text-3xl w-full font-bold text-primary">Current Work</div>
+    <hr class="border-accent my-2"/>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
+  <div class="mb-10 text-justify text-gray-200">
+    I am currently working as a <strong class="text-white">developer</strong> on multiple active Minecraft networks including:  
+    <ul class="list-disc list-inside ml-6 marker:text-accent mt-2">
+      <li><strong class="hover:text-accent">VanillaSMP</strong> – providing plugin support and feature development for community events.</li>
+      <li><strong class="hover:text-accent">EverCore</strong> – helping optimize gameplay mechanics and performance.</li>
+      <li><strong class="hover:text-accent">GenBank</strong> – developing custom systems and automation tools for server management.</li>
+      <li><strong class="hover:text-accent">GrainServers</strong> – assisting with technical development and skripts.</li>
+    </ul>
+
+    <p class="mb-4 mt-2">
+      Through these projects, I continue to expand my experience in backend development, plugin design, and server optimization.
+    </p>
+  </div>
+
+  <!-- Past Work Section -->
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold text-primary">Past Work</div>
+    <hr class="border-accent my-2"/>
+  </div>
+
+  <div class="mb-10 text-justify text-gray-200">
+    I have previously worked on several notable Minecraft servers, including:  
+    <ul class="list-disc list-inside ml-6 marker:text-accent mt-2">
+      <li><strong class="hover:text-accent">ZombiRush</strong> – a remake of Call of Duty Zombies in Minecraft, focusing on custom gameplay mechanics.</li>
+      <li><strong class="hover:text-accent">SquadGens</strong> – a generator tycoon server with multiple custom features and plugins to enhance player experience.</li>
+    </ul>
+  </div>
+
+  <!-- Languages Section -->
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold text-primary">Languages</div>
+    <hr class="border-accent my-2"/>
+  </div>
+
+  <ul class="list-disc list-inside md:columns-2 gap-4 ml-6 marker:text-accent text-gray-200">
     {languages.map((language) => (
-        <li>
+        <li class="mb-1 hover:text-accent">
             <a href={language.link} target="_blank" class="underline">{language.name}</a>
         </li>
     ))}
@@ -137,19 +110,15 @@ const skills = [
 
   <br />
 
+  <!-- Skills Section -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <div class="text-3xl w-full font-bold text-primary">Skills</div>
+    <hr class="border-accent my-2"/>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
+  <ul class="list-disc list-inside md:columns-2 gap-4 ml-6 marker:text-accent text-gray-200">
     {skills.map((skill) => (
-        <li>
-            {skill.link ? (
-                <a href={skill.link} target="_blank" class="underline">{skill.name}</a>
-            ) : (
-                <span>{skill.name}</span>
-            )}
-        </li>
+        <li class="mb-1 hover:text-accent">{skill.name}</li>
     ))}
   </ul>
 </BaseLayout>

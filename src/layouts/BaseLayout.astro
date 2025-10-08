@@ -18,24 +18,37 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="data-theme">
+<html lang="en" data-theme="blacklime">
   <head>
     <BaseHead title={title} description={description} ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
-  <body>
-    <div class="bg-base-100 drawer lg:drawer-open">
+
+  <body class="bg-base-100 text-gray-200 selection:bg-primary selection:text-black">
+    <div class="drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100">
+
+      <!-- MAIN CONTENT AREA -->
+      <div class="drawer-content bg-base-100 transition-all duration-300">
         <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center">
-          <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
+
+        <div class="md:flex md:justify-center mt-4">
+          <main
+            class="p-6 pt-6 lg:max-w-[900px] max-w-[100vw] 
+                   border border-neutral rounded-2xl shadow-lg
+                   hover:border-primary transition-colors duration-300
+                   bg-neutral/50 backdrop-blur-sm"
+          >
             <slot />
           </main>
         </div>
+
         <Footer />
       </div>
-      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+
+      {includeSidebar && (
+        <SideBar sideBarActiveItemID={sideBarActiveItemID} />
+      )}
     </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-# tarna.dev
+# hannaan.dev
 The source code for my website [tarna.dev](https://tarna.dev). 
 
 ## Original Template

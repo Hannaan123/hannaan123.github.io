@@ -1,23 +1,42 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
-import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
+
 const { sideBarActiveItemID } = Astro.props;
+const avatarUrl = "https://avatars.githubusercontent.com/u/127550040?s=400&u=98479899784e9e17ad11e3808a786f1de04a3b54&v=4";
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
-    <div class="w-fit mx-auto mt-5 mb-6">
-      <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" format="webp" width={300} height={300} src="https://avatars.githubusercontent.com/u/46247728?v=4" alt="Profile image" />
-          </div>
+
+  <aside
+    class="px-4 pt-4 h-auto min-h-full w-[19rem]
+           bg-base-200 text-base-content flex flex-col
+           border-r border-lime-500/20"
+  >
+    <!-- Avatar -->
+    <div class="w-fit mx-auto mt-4 mb-6">
+      <a href="/" class="block transition-transform duration-200 hover:scale-105">
+        <div class="w-[8rem] mx-auto">
+          <!-- Use plain <img> for remote avatar (more robust) -->
+          <img
+            src={avatarUrl}
+            alt="Profile image"
+            class="rounded-full w-full h-auto border border-lime-500/30"
+            loading="lazy"
+          />
         </div>
       </a>
     </div>
-    <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
-    <SideBarFooter />
+
+    <!-- Menu -->
+    <div class="px-2">
+      <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
+    </div>
+
+    <!-- Footer (sticks to bottom) -->
+    <div class="mt-auto px-2 pb-4">
+      <SideBarFooter />
+    </div>
   </aside>
 </div>
