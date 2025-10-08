@@ -9,4 +9,4 @@ This is a modified version of a template by [@manuelernestog](https://github.com
 - Added categories to projects.
 - Ability to create hidden posts.
 - Added an automatic age getter on the [CV](src/pages/cv.astro) and [main page](src/pages/index.astro). Birthday can be configured in the [config](src/config.ts).
-- Removed the [store](src/pages/store/) and [services](src/pages/services.astro) from the [sidebar](src/components/SideBarMenu.astro).
+- Removed the [store](src/pages/store/) and [services](src/pages/services.astro) from the [sidebar](src/components/SideBarMenu.astro)."# hannaan.github.io" 
