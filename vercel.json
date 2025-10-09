@@ -13,19 +13,19 @@
     "redirects": [
         {
             "source": "/github",
-            "destination": "https://github.com/tarna"
+            "destination": "https://github.com/Hannaan123"
         },
         {
             "source": "/gh",
-            "destination": "https://github.com/tarna"
+            "destination": "https://github.com/Hannaan123"
         },
         {
             "source": "/github/:slug*",
-            "destination": "https://github.com/tarna/:slug*"
+            "destination": "https://github.com/Hannaan123/:slug*"
         },
         {
             "source": "/gh/:slug*",
-            "destination": "https://github.com/tarna/:slug*"
+            "destination": "https://github.com/Hannaan123/:slug*"
         },
         {
             "source": "/discord",
@@ -33,7 +33,7 @@
         },
         {
             "source": "/paypal",
-            "destination": "https://paypal.me/Tarna321"
+            "destination": "https://paypal.me"
         }
     ]
 }  

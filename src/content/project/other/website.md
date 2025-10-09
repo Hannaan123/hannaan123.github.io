@@ -22,7 +22,7 @@ source: "https://github.com/tarna/tarna.dev"
     A modified version of a template by 
     <a href="https://github.com/manuelernestog" target="_blank" class="underline text-lime-500">@manuelernestog</a>. 
     You can find the original source code 
-    <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="underline text-lime-500">here</a>.
+    <a href="https://github.com/Hannaan123/hannaan123.github.io" target="_blank" class="underline text-lime-500">here</a>.
   </p>
 </div>
 
