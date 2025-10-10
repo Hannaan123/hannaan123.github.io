@@ -4,6 +4,7 @@ title: "SoulzProxy"
 description: "A Proxy Plugin made to work hand in hand with SoulNetwork Plugin"
 category: "Plugins"
 source: "https://github.com/Hannaan123/SoulzProxy"
+featured: true
 ---
 
 <div class="mb-6">

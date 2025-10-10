@@ -5,6 +5,7 @@ description: "This website!"
 category: "Other"
 link: "https://dev.soulnetwork.club"
 source: "https://github.com/Hannaan123/hannaan123.github.io"
+featured: true
 ---
 
 <div class="mb-6">
