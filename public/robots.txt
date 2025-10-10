@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tarna.dev/sitemap-index.xml
+Sitemap: https://dev.soulnetwork.club/sitemap-index.xml
