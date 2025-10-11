@@ -29,6 +29,8 @@ module.exports = {
           "success": "#22c55e",
           "warning": "#facc15",
           "error": "#ef4444",
+          // add this line to make inputs and textareas dark
+          "--input-bg": "#1e1e1e",
         },
       },
     ],
