@@ -44,7 +44,7 @@ featured: true
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Support</h2>
   <p class="text-gray-200">
     Report issues on <a href="https://github.com/Hannaan123/SoulNetwork-Plugin/issues" class="underline text-lime-500" target="_blank">GitHub</a>  
-    or join the <a href="https://discord.gg/SScnNymExa" class="underline text-lime-500" target="_blank">Discord</a>.
+    or join the <a href="https://discord.gg/SyVgVa68S8" class="underline text-lime-500" target="_blank">Discord</a>.
   </p>
 </div>
 
