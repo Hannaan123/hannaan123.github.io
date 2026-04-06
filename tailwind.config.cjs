@@ -7,9 +7,9 @@ module.exports = {
         dark: {
           css: {
             color: '#E5E5E5', // light text for dark background
-            a: { color: '#ffffff' }, // white links
+            a: { color: '#a3e635' }, // lime links
             strong: { color: '#ffffff' },
-            code: { color: '#ffffff' },
+            code: { color: '#a3e635' },
           },
         },
       },
@@ -20,11 +20,11 @@ module.exports = {
     themes: [
       {
         blacklime: {
-          "primary": "#ffffff",   // white accent
-          "secondary": "#0a0a0a", // near-black
-          "accent": "#d4d4d4",    // light gray for highlights
-          "neutral": "#171717",   // dark gray for cards, etc.
-          "base-100": "#0a0a0a",  // page background
+          "primary": "#a3e635",   // lime accent
+          "secondary": "#121212", // slightly lighter black
+          "accent": "#bef264",    // lighter lime for highlights
+          "neutral": "#1e1e1e",   // dark gray for cards, etc.
+          "base-100": "#121212",  // page background
           "info": "#3b82f6",
           "success": "#22c55e",
           "warning": "#facc15",

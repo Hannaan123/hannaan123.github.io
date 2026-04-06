@@ -18,6 +18,6 @@ link: "https://mlnehut.com"
 <div class="mb-6">
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Project Link</h2>
   <p class="text-gray-200">
-    <a href="https://mlnehut.com" class="underline text-white" target="_blank">Visit mlnehut.com</a>
+    <a href="https://mlnehut.com" class="underline text-lime-500" target="_blank">Visit mlnehut.com</a>
   </p>
 </div>

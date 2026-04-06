@@ -21,9 +21,9 @@ featured: true
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Original Template</h2>
   <p class="text-gray-200">
     A modified version of a template by 
-    <a href="https://github.com/tarna/tarna.dev" target="_blank" class="underline text-white">@tarna</a>. 
+    <a href="https://github.com/tarna/tarna.dev" target="_blank" class="underline text-lime-500">@tarna</a>. 
     You can find the original source code 
-    <a href="https://github.com/Hannaan123/hannaan123.github.io" target="_blank" class="underline text-white">here</a>.
+    <a href="https://github.com/Hannaan123/hannaan123.github.io" target="_blank" class="underline text-lime-500">here</a>.
   </p>
 </div>
 
@@ -41,7 +41,7 @@ featured: true
 <div class="mb-6">
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Links</h2>
   <p class="text-gray-200">
-    <a href="https://dev.soulnetwork.club" class="underline text-white" target="_blank">Visit the website</a> | 
-    <a href="https://github.com/Hannaan123/hannaan123.github.io" class="underline text-white" target="_blank">Source code</a>
+    <a href="https://dev.soulnetwork.club" class="underline text-lime-500" target="_blank">Visit the website</a> | 
+    <a href="https://github.com/Hannaan123/hannaan123.github.io" class="underline text-lime-500" target="_blank">Source code</a>
   </p>
 </div>
