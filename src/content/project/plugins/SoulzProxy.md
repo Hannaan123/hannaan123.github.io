@@ -20,7 +20,7 @@ featured: true
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Dependencies</h2>
   <ul class="list-disc list-inside text-gray-200 space-y-2">
     <li>
-      <a href="https://github.com/Hannaan123/SoulNetwork-Plugin" class="underline text-lime-500" target="_blank">
+      <a href="https://github.com/Hannaan123/SoulNetwork-Plugin" class="underline text-white" target="_blank">
         SoulNetwork Plugin
       </a>
     </li>
@@ -40,7 +40,7 @@ featured: true
   <h2 class="text-2xl font-bold text-primary mb-2 border-b-2 border-accent pb-1">Bugs</h2>
   <p class="text-gray-200">
     This plugin is under active development, so bugs may occur. Report issues on the 
-    <a href="https://github.com/Hannaan123/SoulzProxy/issues" class="underline text-lime-500" target="_blank">GitHub issues page</a>  
+    <a href="https://github.com/Hannaan123/SoulzProxy/issues" class="underline text-white" target="_blank">GitHub issues page</a>  
     or DM <code>Hannaan7real</code> on Discord.
   </p>
 </div>
